@@ -1,10 +1,8 @@
-public class PressingDecorator implements FootballStrategy {
-    private FootballStrategy decoratedStrategy;
+public class PressingDecorator extends OffensiveDecorator{
     public PressingDecorator(FootballStrategy decoratedStrategy) {
-        this.decoratedStrategy = decoratedStrategy;
+        this.decoratedStrategy=decoratedStrategy;
     }
-    @Override
-    public String play() {
-        return decoratedStrategy.play() + " with pressing";
+    public String play(){
+        return decoratedStrategy.play()+" with pressing";
     }
 }
