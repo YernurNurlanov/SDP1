@@ -2,11 +2,13 @@ public class Main {
     public static void main(String[] args) {
         FootballLeague league = FootballLeague.getInstance();
         FootballStrategy BarcaStrategy = new OffensiveStrategy();
-        FootballStrategy ManUtdStrategy = new DefensiveStrategy();
         BarcaStrategy = new PressingDecorator(BarcaStrategy);
-        league.addTeam(new FootballLeague.Team("Barcelona", BarcaStrategy.play()));
-        league.addTeam(new FootballLeague.Team("Manchester United", ManUtdStrategy.play()));
-        for (FootballLeague.Team team : FootballLeague.teams ) {
+        Team team1 = new Team("Barcelona", BarcaStrategy.play());
+        TeamWithNumOfPlayers team2 = new TeamWithNumOfPlayers("Manchester United", 1);
+        league.addTeam(team1);
+        TeamAdapter adaptedTeam2 = new TeamAdapter(team2);
+        league.addTeam(adaptedTeam2);
+        for (Team team : FootballLeague.teams ) {
             System.out.println(team.getName()+" "+team.getStrategy());
         }
     }
