@@ -1,5 +1,5 @@
-class TeamAdapter extends Team {
-    private TeamWithNumOfPlayers adaptedTeam;
+class TeamAdapter extends TeamWithStrategy {
+    private Team adaptedTeam;
     public TeamAdapter(TeamWithNumOfPlayers adaptedTeam) {
         super(adaptedTeam.getName(), TeamAdapter.determineStrategy(adaptedTeam.getPlayers()));
         this.adaptedTeam = adaptedTeam;
