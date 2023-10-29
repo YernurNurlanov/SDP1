@@ -1,4 +1,4 @@
-public class TeamWithNumOfPlayers {
+public class TeamWithNumOfPlayers implements Team{
     private String name;
     private int players;
     public TeamWithNumOfPlayers(String name, int players){
