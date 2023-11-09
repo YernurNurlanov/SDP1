@@ -1,3 +1,3 @@
-abstract class OffensiveDecorator implements FootballStrategy{
+abstract class OffensiveDecorator implements FootballStrategy {
     public FootballStrategy decoratedStrategy;
 }

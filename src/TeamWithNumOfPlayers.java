@@ -1,14 +1,7 @@
-public class TeamWithNumOfPlayers implements Team{
-    private String name;
-    private int players;
-    public TeamWithNumOfPlayers(String name, int players){
-        this.name = name;
-        this.players = players;
-    }
-    public String getName(){
-        return name;
-    }
-    public int getPlayers(){
-        return players;
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+public record TeamWithNumOfPlayers(String name, int players) implements Team {
+    public static List<String> teamsName = new ArrayList<>();
+    public static List<Integer> teamsPlayers = new ArrayList<>();
 }

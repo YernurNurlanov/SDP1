@@ -1,3 +1,3 @@
 public interface Team {
-    String getName();
+    String name();
 }

@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 public class FootballLeague {
     private static FootballLeague instance;
-    public static List<Team> teams;
-    private List<Observer> observers = new ArrayList<>();
+    public static List<TeamWithStrategy> teams;
+    public static List<Observer> observers = new ArrayList<>();
     private FootballLeague() {
         teams = new ArrayList<>();
     }
@@ -13,15 +13,15 @@ public class FootballLeague {
         }
         return instance;
     }
-    public void addTeam(Team team){
+    public void addTeam(TeamWithStrategy team){
         teams.add(team);
-        notifyObservers(team.getName() + " has been added to the league.");
+        notifyObservers(team.name() + " has been added to the league.");
     }
 
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
-    public void removeObserver(Observer observer) {
+    public static void removeObserver(Observer observer) {
         observers.remove(observer);
     }
     private void notifyObservers(String message) {
